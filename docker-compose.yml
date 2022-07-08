@@ -10,3 +10,10 @@ services:
       MARIADB_USER: user
       MARIADB_PASSWORD: pw
 
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1

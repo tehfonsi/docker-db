@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: xyz
+      MARIADB_USER: user
+      MARIADB_PASSWORD: pw
+

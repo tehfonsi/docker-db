@@ -6,6 +6,8 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - /backup:/backup
 
   phpmyadmin:
     image: phpmyadmin

@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.9'
 
 services:
   db:
@@ -6,14 +6,9 @@ services:
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
-      MARIADB_DATABASE: xyz
-      MARIADB_USER: user
-      MARIADB_PASSWORD: pw
 
   phpmyadmin:
     image: phpmyadmin
     restart: always
     ports:
       - 8080:80
-    environment:
-      - PMA_ARBITRARY=1

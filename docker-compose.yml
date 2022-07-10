@@ -3,6 +3,7 @@ version: '3.9'
 services:
   db:
     image: mariadb
+    container_name: mariadb
     restart: always
     environment:
       MARIADB_ROOT_PASSWORD: example
@@ -11,6 +12,15 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
+    container_name: phpmyadmin
     restart: always
     ports:
       - 8080:80
+
+  backup:
+    image: backup
+    container_name: backup
+    restart: always
+    volumes:
+      - /backup:/backup
+      - /var/run/docker.sock:/var/run/docker.sock
